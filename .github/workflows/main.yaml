@@ -57,4 +57,4 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: devnla/fastapi-cicd:${{ github.sha }}
+          tags: devnla/fastapi-cicd:latest
