@@ -13,10 +13,21 @@ spec:
         app: fastapi-app
     spec:
       containers:
-      - name : fastapi-container
-        image:  devnla/fastapi-cicd:latest
+      - name: fastapi-container
+        image: devnla/fastapi-cicd:latest
         ports:
         - containerPort: 8000
+        env:
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: fastapi-config
+              key: APP_NAME
+        - name: APP_VERSION
+          valueFrom:
+            configMapKeyRef:
+              name: fastapi-config
+              key: APP_VERSION
         resources:
           requests:
             memory: "64Mi"
