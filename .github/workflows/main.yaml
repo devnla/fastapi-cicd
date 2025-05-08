@@ -26,7 +26,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest pytest-cov black
+
+          # Install dev dependencies
+          pip install -r requirements-dev.txt
 
       - name: Run tests
         run: |
