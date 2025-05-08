@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fastapi-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: fastapi-app
@@ -17,3 +17,10 @@ spec:
         image:  devnla/fastapi-cicd:latest
         ports:
         - containerPort: 8000
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
