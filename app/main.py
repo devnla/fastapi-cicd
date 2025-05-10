@@ -16,7 +16,7 @@ APP_VERSION = os.getenv("APP_VERSION", "0.0.0")
 
 @app.get("/")
 async def root():
-    return {"message": "Hello from FastAPI CICD Project!"}
+    return {"message": "Mingalarbar from FastAPI CICD Project!"}
 
 
 @app.get("/health")
