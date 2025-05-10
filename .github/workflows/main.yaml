@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'
   pull_request:
     branches:
       - main
@@ -57,4 +59,6 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: devnla/fastapi-cicd:latest
+          tags: |
+            devnla/fastapi-cicd:latest
+            devnla/fastapi-cicd:${{ github.ref_name }}
